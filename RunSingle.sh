@@ -2,7 +2,6 @@
 
 clear
 
-echo
 echo Optimal
 time ./randData $1 | ./closestPair optimal
 

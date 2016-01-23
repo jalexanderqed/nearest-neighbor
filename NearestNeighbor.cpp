@@ -67,6 +67,20 @@ vector<Tuple<Tuple<double, double>, Tuple<double, double>>> OptimalFindNearestNe
     }
   }
 
+  if(yRight.size() != yLeft.size()){ // Handle corner case where comparisons mis-sort y values
+    yRight.clear();
+    yLeft.clear();
+    for(vector<Tuple<double, double>>::iterator i = xBegin; i != xBegin + mid; i++){
+      yLeft.push_back(*i);
+    }
+    for(vector<Tuple<double, double>>::iterator i = xBegin + mid; i != xEnd; i++){
+      yRight.push_back(*i);
+    }
+
+    sort(yLeft.begin(), yLeft.end(), yComp);
+    sort(yRight.begin(), yRight.end(), yComp);
+  }
+
   vector<Tuple<Tuple<double, double>, Tuple<double, double>>> leftRes = OptimalFindNearestNeighbors(xBegin, xBegin + mid,
 											   yLeft.begin(), yLeft.end());
   vector<Tuple<Tuple<double, double>, Tuple<double, double>>> rightRes = OptimalFindNearestNeighbors(xBegin + mid, xEnd,
