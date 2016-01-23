@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cfloat>
 #include <cmath>
+#include <iomanip>
 #include "Util.h"
 
 using namespace std;
@@ -255,6 +256,7 @@ string trim(string& str){
 }
 
 int main(int argc, char ** argv){
+  cout.precision(7);
   if(argc != 2){
     cout << "Please specify either 'brute', 'basic', or 'optimal'" << endl;
     return 1;
@@ -352,7 +354,7 @@ int main(int argc, char ** argv){
     }
   }
 
-  cout << "closest pair distance: " << calcDist(bestPoints[0].x, bestPoints[0].y) << endl;
+  cout << "closest pair distance: " << fixed << calcDist(bestPoints[0].x, bestPoints[0].y) << endl;
   for(vector<Tuple<Tuple<double, double>, Tuple<double, double>>>::iterator iter = bestPoints.begin();
       iter != bestPoints.end();
       iter++){
