@@ -352,7 +352,7 @@ int main(int argc, char ** argv){
     }
   }
 
-  cout << calcDist(bestPoints[0].x, bestPoints[0].y) << endl;
+  cout << "closest pair distance: " << calcDist(bestPoints[0].x, bestPoints[0].y) << endl;
   for(vector<Tuple<Tuple<double, double>, Tuple<double, double>>>::iterator iter = bestPoints.begin();
       iter != bestPoints.end();
       iter++){

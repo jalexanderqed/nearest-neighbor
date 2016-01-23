@@ -1,9 +1,15 @@
 #!/bin/bash
 
-#./randData 100000 > test_data.txt
+clear
+
+echo
 echo Optimal
-./closestPair optimal < test_data.txt
+time ./randData $1 | ./closestPair optimal
+
+echo
 echo Basic
-./closestPair basic < test_data.txt
+time ./randData $1 | ./closestPair basic
+
+echo
 echo Brute
-./closestPair brute < test_data.txt
+time ./randData $1 | ./closestPair brute
