@@ -1,3 +1,8 @@
+/* John Alexander
+ * 8327934
+ * CS130B
+ */
+
 #ifndef __UTIL_H__
 #define __UTIL_H__
 

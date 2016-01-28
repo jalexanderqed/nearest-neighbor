@@ -1,3 +1,8 @@
+/* John Alexander
+ * 8327934
+ * CS130B
+ */
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>
